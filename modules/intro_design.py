@@ -41,6 +41,6 @@ def application():
             z[1].fd(2*x)
             z[1].lt(2)
             goto(z[1].pos())
-    done()
-    
+    z.bye()
+
 application()
