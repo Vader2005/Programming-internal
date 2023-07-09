@@ -41,6 +41,8 @@ def application():
             z[1].fd(2*x)
             z[1].lt(2)
             goto(z[1].pos())
-    z.bye()
+    #z.bye()
+    from First_window import Window
+    Window()
 
 application()
