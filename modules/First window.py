@@ -9,6 +9,10 @@ def Quit():
     
 # The continue button function, it would redirect to another tkinter drawing
 
+def Continue():
+    app.destroy()
+    from After_first_window_design import draw
+
 # Create the application window
 app = customtkinter.CTk()
 app.geometry("1008x592")
@@ -40,7 +44,7 @@ Quit.place(x=160, y=400)
 
 # Creating the proceed button
 
-Continue = customtkinter.CTkButton(app, text="Continue", width=142, height=75, fg_color="#a98bff", font=('Roboto', 27))
+Continue = customtkinter.CTkButton(app, text="Continue", command=Continue, width=142, height=75, fg_color="#a98bff", font=('Roboto', 27))
 Continue.configure(text_color="#000000")
 Continue.place(x=700, y=400)
 
