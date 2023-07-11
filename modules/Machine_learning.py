@@ -3,7 +3,7 @@
 import math
 from pandas_datareader import data as pdr
 import numpy as np
-import pandas as np
+import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 from keras.models import Sequential
 from keras.layers import Dense, LSTM
@@ -77,7 +77,76 @@ for i in range(60, len(train_data)):
     x_train.append(train_data[i-60:i, 0]) # Not including i, has 60 values(to 59 according to python index)
     y_train.append(train_data[i, 0]) # The 61'st data value
     
-    if i <= 60:
-        print(x_train)
-        print("")
-        print(y_train)
+    #if i <= 60:
+        #print(x_train)
+        #print("")
+        #print(y_train)
+        
+# CONVERTING THE TRAINING DATA/RESHAPING THE DATA
+
+x_train, y_train = np.array(x_train), np.array(y_train) # Converting the 2 lists to nupy arrays
+
+# RESHAPING THE DATASET
+# For the recurrent neural network, the input has to be 3-dimensional(samples, time steps and features)
+# Currently only in 2 dimensions, as seen with df.shape
+# x_train = 2258 rows
+# Features for us is just the closing price
+
+#print(x_train.shape)
+
+x_train = np.reshape(x_train, (x_train.shape[0], x_train.shape[1], 1)) # taking the 2258 samples and the 60 columns(2258, 60, 1)
+#print(x_train.shape)
+
+# BUILDING THE NEURAL NETWORK
+# Consists of 4 layers, 2 LSTM layers and 2 dense layers
+# LSTM layers each have 50 neurons and the Dense layers have 25 and 1 neuron
+
+model = Sequential()
+model.add(LSTM(50, return_sequences=True, input_shape=(x_train.shape[1], 1))) # First layer of the neural networ, 50 neurons, return sequencs is true, because we have a second layer, the input shape is the time steps(60) and features being 1
+model.add(LSTM(50, return_sequences=False)) # No more LSTM layers so return sequences is False
+model.add(Dense(25)) 
+model.add(Dense(1))
+
+# COMPILING THE MODEL
+# Optimizer improves the loss function
+# Loss function measures how well the model does on the training
+
+model.compile(optimizer='adam', loss='mean_squared_error') # Optimization and loss function
+
+# TRAIN THE MODEL
+# epoch is the number of iterations you want to test when the model is going through a neural network
+
+model.fit(x_train, y_train, batch_size=1, epochs=1)
+
+
+# THE TESTING DATASET
+
+test_data = new_data[amount_training_data - 60: , :] # Gets the data from 2318 to 2897
+
+# X_TEST AND Y_TEST
+
+x_test = []
+y_test = dataset[amount_training_data: , :] # All the values we want our model to predict, remember before the many x_values and 1 value, we are collecting all those y_values
+
+for i in range(60, len(test_data)):
+    x_test.append(test_data[i-60:i, 0]) # Contains the past 60 values
+
+# CONVEST TEST DATA TO A NUMPY ARRAY
+
+x_test = np.array(x_test)
+
+# RESHAPE THE TEST DATA
+
+x_test = np.reshape(x_test, (x_test.shape[0], x_test.shape[1], 1))
+
+# GET THE PREDICTED PRICE VALUES FOR X_TEST
+
+predictions = model.predict(x_test) # We want these values to be as similar to that of the values in y_test
+predictions = scaler.inverse_transform(predictions) # Unscaling the values
+
+# MODEL EVALUATION
+# RMSE, is an error method, lower values indicate a better fit
+
+rmse = np.sqrt(np.mean(predictions-y_test)**2)
+print(rmse)
+
