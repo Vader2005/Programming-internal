@@ -43,6 +43,6 @@ def application():
             goto(z[1].pos())
     #z.bye()
     from First_window import Window
-    Window()
+    Window() # Load the first gui window
 
 application()
