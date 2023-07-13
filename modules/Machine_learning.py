@@ -148,5 +148,27 @@ predictions = scaler.inverse_transform(predictions) # Unscaling the values
 # RMSE, is an error method, lower values indicate a better fit
 
 rmse = np.sqrt(np.mean(predictions-y_test)**2)
-print(rmse)
+#print(rmse)
+
+# PLOT THE DATA
+
+train = data[:amount_training_data] # From 0 to the len of the training data
+valid = data[amount_training_data:] # From the len of training data to the end of the dataset
+valid['Predictions'] = predictions
+
+# DRAW THE GRAPH
+
+plt.figure(figsize=(16, 8))
+plt.title("Machine learning")
+plt.xlabel('Date', fontsize=18)
+plt.ylabel('Closing price', fontsize=18)
+plt.plot(train['Close']) # The training data
+plt.plot(valid[['Close', 'Predictions']])
+plt.legend(['Train', 'Validations', 'Predictions'], loc='lower right')
+plt.show()
+
+# SHOW THE ACTUAL AND PREDICTED PRICE  
+# Shows the data of the actual and predicted values
+
+#print(valid)
 
