@@ -76,7 +76,7 @@ for i in range(60, len(train_data)):
     # append past 60 values to the x_train dataset
     x_train.append(train_data[i-60:i, 0]) # Not including i, has 60 values(to 59 according to python index)
     y_train.append(train_data[i, 0]) # The 61'st data value
-    
+
     #if i <= 60:
         #print(x_train)
         #print("")
@@ -158,14 +158,23 @@ valid['Predictions'] = predictions
 
 # DRAW THE GRAPH
 
-plt.figure(figsize=(16, 8))
-plt.title("Machine learning")
-plt.xlabel('Date', fontsize=18)
-plt.ylabel('Closing price', fontsize=18)
-plt.plot(train['Close']) # The training data
-plt.plot(valid[['Close', 'Predictions']])
-plt.legend(['Train', 'Validations', 'Predictions'], loc='lower right')
-plt.show()
+'''
+
+def Graph():
+    plt.figure(figsize=(5, 4))
+    plt.title("Machine learning")
+    plt.xlabel('Date', fontsize=8)
+    plt.ylabel('Closing price', fontsize=8)
+    plt.plot(train['Close']) # The training data
+    plt.plot(valid[['Close', 'Predictions']])
+    plt.legend(['Train', 'Validations', 'Predictions'], loc='lower right')
+    plt.show()
+    
+'''
+
+# Run the graph
+
+#Graph()
 
 # SHOW THE ACTUAL AND PREDICTED PRICE  
 # Shows the data of the actual and predicted values

@@ -13,6 +13,8 @@ def Window():
     def Continue():
         app.destroy()
         from After_first_window_design import draw
+        import Second_window
+        Second_window.app.mainloop()
 
     # Create the application window
     app = customtkinter.CTk()
