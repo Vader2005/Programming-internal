@@ -1,7 +1,8 @@
 import customtkinter
-from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg)
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 import Machine_learning
 from matplotlib.figure import Figure
+from matplotlib.backend_tools import ToolBase, ToolToggleBase
 
 # Create the application window
 
@@ -25,7 +26,14 @@ plot1.legend(['Train', 'Validations', 'Predictions'], loc='lower right')
 
 canvas = FigureCanvasTkAgg(fig, master=app)
 canvas.draw()
-canvas.get_tk_widget().place(x=100, y=200)
+canvas.get_tk_widget().place(x=50, y=150)
+
+# Add a tool bar
+
+toolbar = NavigationToolbar2Tk(canvas, app)
+toolbar.update()
+toolbar.pack()
+#canvas.get_tk_widget().place(x=100, y=200)
 
 # Run the window
 
