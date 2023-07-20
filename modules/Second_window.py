@@ -32,8 +32,13 @@ canvas.get_tk_widget().place(x=50, y=150)
 
 toolbar = NavigationToolbar2Tk(canvas, app)
 toolbar.update()
-toolbar.pack()
-#canvas.get_tk_widget().place(x=100, y=200)
+toolbar.place(x=50, y=653)
+
+# Line customization button
+
+Line_customization = customtkinter.CTkButton(app, text="Line Customization", width=142, height=75, fg_color='#bec3fa', font=('Roboto', 16))
+Line_customization.configure(text_color='#22277a')
+Line_customization.place(x=460, y=500)
 
 # Run the window
 
