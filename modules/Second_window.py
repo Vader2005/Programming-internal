@@ -4,6 +4,12 @@ import Machine_learning
 from matplotlib.figure import Figure
 from matplotlib.backend_tools import ToolBase, ToolToggleBase
 
+# Create the color Variables
+
+Train_color = 'y'
+Valid_color = 'r'
+Prediction_color = 'b'
+
 # Create the application window
 
 app = customtkinter.CTk()
@@ -20,8 +26,9 @@ Heading.place(x=105, y=25)
 
 fig = Figure(figsize= (5, 5), dpi=100)
 plot1 = fig.add_subplot(111)
-plot1.plot(Machine_learning.train['Close'])
-plot1.plot(Machine_learning.valid[['Close', 'Predictions']])
+plot1.plot(Machine_learning.train['Close'], Train_color)
+plot1.plot(Machine_learning.valid['Close'], Valid_color)
+plot1.plot(Machine_learning.valid['Predictions'], Prediction_color)
 plot1.legend(['Train', 'Validations', 'Predictions'], loc='lower right')
 
 canvas = FigureCanvasTkAgg(fig, master=app)
