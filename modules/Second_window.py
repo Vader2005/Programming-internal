@@ -4,6 +4,11 @@ import Machine_learning
 from matplotlib.figure import Figure
 from matplotlib.backend_tools import ToolBase, ToolToggleBase
 
+# Change the color
+
+def color_changer():
+    import Color_changer
+
 # Create the color Variables
 
 Train_color = 'y'
@@ -43,7 +48,7 @@ toolbar.place(x=50, y=653)
 
 # Line customization button
 
-Line_customization = customtkinter.CTkButton(app, text="Line Customization", width=142, height=75, fg_color='#bec3fa', font=('Roboto', 16))
+Line_customization = customtkinter.CTkButton(app, command=color_changer, text="Line Customization", width=142, height=75, fg_color='#bec3fa', font=('Roboto', 16))
 Line_customization.configure(text_color='#22277a')
 Line_customization.place(x=460, y=500)
 
