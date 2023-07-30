@@ -18,14 +18,26 @@ Frame_2.place(x=481, y=0)
 # Change color line 1
 
 def change_color_Line1():
+    #global colors
     colors = askcolor(title="Tkinter Color Chooser")
     Frame_1.configure(fg_color=colors[1])
-    
+  
 # Change color line 2
 
 def change_color_Line2():
+    #global color2
     color2 = askcolor(title="Tkinter Color Chooser")
     Frame_2.configure(fg_color=color2[1])
+    
+# Recolor the graph:
+
+def Recolor():
+    global colors, color2
+    colors = askcolor(title="Tkinter Color Chooser")
+    color2 = askcolor(title="Tkinter Color Chooser")
+    import Recolor_graph
+    Recolor_graph.new_graph()
+
 
 # Create the Label
 
@@ -44,6 +56,11 @@ Line_1.place(x=387, y=200)
 Line_2 = customtkinter.CTkButton(app, text="Line 2", command=change_color_Line2, width=156, height=69, fg_color='#9200d6', font=('Roboto', 23))
 Line_2.configure(text_color='#e8d2ff')
 Line_2.place(x=387, y=400)
+
+# recolor button
+
+Recolor_button = customtkinter.CTkButton(app, text="Recolor graph", command=Recolor)
+Recolor_button.place(x = 500, y=500)
 
 # Run the mainloop
 
