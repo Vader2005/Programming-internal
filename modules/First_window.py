@@ -1,12 +1,38 @@
-import tkinter
+from tkinter import *
 import customtkinter
 import sys
+from playsound import playsound
+from PIL import ImageTk, Image
+import os
 
 def Window():
     # Quit button function
 
     def Quit():
         sys.exit()
+        
+    # Create the shawn function
+    
+    def Shawn():
+        playsound(r"C:\Users\Survi\Documents\Programming internal\modules\audio.mp3")
+        
+        win = Toplevel()
+        
+        win.geometry("900x800")
+        
+        frame = Frame(win, width=900, height=800)
+        frame.pack()
+        frame.place(anchor='center', relx=0.5, rely=0.5)
+        
+        image1=Image.open(os.path.join(r"C:\Users\Survi\Documents\Programming internal\modules\Shawn.jpg"))
+        resize_image = image1.resize((900, 800), Image.ANTIALIAS)
+        img = ImageTk.PhotoImage(resize_image)
+        
+        
+        label = Label(frame, image=img)
+        label.pack()
+        
+        win.mainloop()
     
     # The continue button function, it would redirect to another tkinter drawing
 
@@ -50,6 +76,12 @@ def Window():
     Continue = customtkinter.CTkButton(app, text="Continue", command=Continue, width=142, height=75, fg_color="#a98bff", font=('Roboto', 27))
     Continue.configure(text_color="#000000")
     Continue.place(x=700, y=400)
+    
+    # Create the Shawn Button
+    
+    Shawn =  Continue = customtkinter.CTkButton(app, text="Shawn", command=Shawn, width=142, height=75, fg_color="#a98bff", font=('Roboto', 27))
+    Shawn.configure(text_color='#000000')
+    Shawn.place(x=400, y=400)
 
     # Run the application window
     app.mainloop()
