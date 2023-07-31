@@ -8,6 +8,20 @@ from matplotlib.backend_tools import ToolBase, ToolToggleBase
 
 def color_changer():
     import Color_changer
+    
+# Create the drawn equations
+
+def Draw_equations():
+    Equation_chosen = combo.get()
+    
+    if Equation_chosen == 'Linear':
+        print("Linear chosen")
+        
+    if Equation_chosen == 'exponential':
+        print("Exponential chosen")
+        
+    if Equation_chosen == 'logarithmic':
+        print("Logarithmic chosen")
 
 # Create the color Variables
 
@@ -51,6 +65,19 @@ toolbar.place(x=50, y=653)
 Line_customization = customtkinter.CTkButton(app, command=color_changer, text="Line Customization", width=142, height=75, fg_color='#bec3fa', font=('Roboto', 16))
 Line_customization.configure(text_color='#22277a')
 Line_customization.place(x=460, y=500)
+
+# Combobox
+
+combo = customtkinter.StringVar()
+Equations = ['Linear', 'exponential', 'logarithmic']
+Equations_combo = customtkinter.CTkComboBox(app, variable=combo, state='readonly', values=Equations)
+Equations_combo.place(x=460, y=450)
+
+# Button for combobox
+
+Equation_button = customtkinter.CTkButton(app, command=Draw_equations, text="Draw", width=142, height=75, fg_color='#bec3fa', font=('Roboto', 16))
+Equation_button.configure(text_color='#22277a')
+Equation_button.place(x=460, y=300)
 
 # Run the window
 
