@@ -69,6 +69,11 @@ app = customtkinter.CTk()
 app.geometry('940x589')
 app.configure(fg_color='#663399')
 
+# Create the main label
+Heading = customtkinter.CTkLabel(app, text="Linear Trendline", fg_color="#e1a8ff", width=719, height=48, font=('Roboto', 36))
+Heading.configure(text_color="#6d6dff")
+Heading.place(x=90, y=40)
+
 # Create the starting x value label
 
 y_1_label = customtkinter.CTkLabel(app, text="Enter your first y value here:", fg_color='#be9edf', width=300, height=48, font=('Roboto', 16))
@@ -97,6 +102,6 @@ y_2.place(x=350, y=325)
 
 Equation_button = customtkinter.CTkButton(app, command=draw, text="Draw", width=142, height=75, fg_color='#bec3fa', font=('Roboto', 16))
 Equation_button.configure(text_color='#22277a')
-Equation_button.place(x=460, y=300)
+Equation_button.place(x=500, y=275)
 
 app.mainloop()
