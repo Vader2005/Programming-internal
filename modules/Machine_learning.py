@@ -156,6 +156,15 @@ train = data[:amount_training_data] # From 0 to the len of the training data
 valid = data[amount_training_data:] # From the len of training data to the end of the dataset
 valid['Predictions'] = predictions
 
+def get_x_value(closing_price):
+    # Check if the closing price exists in the DataFrame
+    diff = (df['Close'] - closing_price).abs()
+    closest_row = df.loc[diff.idxmin()]
+    
+    # Get the date corresponding to the closest closing price
+    date = closest_row.name.strftime('%Y-%m-%d')
+    return date
+
 # DRAW THE GRAPH
 
 '''
