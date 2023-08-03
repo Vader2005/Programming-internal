@@ -15,7 +15,7 @@ def Draw_equations():
     Equation_chosen = combo.get()
     
     if Equation_chosen == 'Linear':
-        print("Linear chosen")
+        import Linear_function
         
     if Equation_chosen == 'exponential':
         print("Exponential chosen")
