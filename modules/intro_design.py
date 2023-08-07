@@ -16,8 +16,8 @@ def application():
         i.shape("circle")
         i.shapesize(0.3)
         i.width(3)
-        i.pu()
-        i.seth(90)
+        i.pu() # Turtle.penup
+        i.seth(90) # Set heading, like North South West or East, rotate by 90 degrees to change.
         i.fd(350)
         i.seth(-180)
         i.pd()
@@ -25,7 +25,7 @@ def application():
 
     delay(0)
     speed(0)
-    ht()
+    ht() # Hide turtle
     sleep(4)
 
     # Iterate the different colors
@@ -39,7 +39,7 @@ def application():
             goto(z[0].pos())
             pd()
             z[1].fd(2*x)
-            z[1].lt(2)
+            z[1].lt(2) # The left angle
             goto(z[1].pos())
     #z.bye()
     from First_window import Window
