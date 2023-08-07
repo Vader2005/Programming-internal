@@ -71,13 +71,19 @@ Line_customization.place(x=460, y=500)
 combo = customtkinter.StringVar()
 Equations = ['Linear', 'exponential', 'logarithmic']
 Equations_combo = customtkinter.CTkComboBox(app, variable=combo, state='readonly', values=Equations)
-Equations_combo.place(x=460, y=450)
+Equations_combo.place(x=600, y=435)
 
 # Button for combobox
 
-Equation_button = customtkinter.CTkButton(app, command=Draw_equations, text="Draw", width=142, height=75, fg_color='#bec3fa', font=('Roboto', 16))
+Equation_button = customtkinter.CTkButton(app, command=Draw_equations, text="Draw Trendline", width=142, height=75, fg_color='#bec3fa', font=('Roboto', 16))
 Equation_button.configure(text_color='#22277a')
 Equation_button.place(x=460, y=300)
+
+# Draw trendline option
+
+Trendline_label = customtkinter.CTkLabel(app, text="Draw a trendline: ", fg_color='#be9edf', width=50, height=50, font=('Roboto', 16))
+Trendline_label.configure(text_color='#660cc0')
+Trendline_label.place(x=460, y=425)
 
 # Run the window
 
