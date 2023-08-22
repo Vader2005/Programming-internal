@@ -74,7 +74,7 @@ Heading = customtkinter.CTkLabel(app, text="Linear Trendline", fg_color="#e1a8ff
 Heading.configure(text_color="#6d6dff")
 Heading.place(x=90, y=40)
 
-# Create the starting x value label
+# Create the starting y value label
 
 y_1_label = customtkinter.CTkLabel(app, text="Enter your first y value here:", fg_color='#be9edf', width=300, height=48, font=('Roboto', 16))
 y_1_label.configure(text_color='#660cc0')
@@ -92,7 +92,7 @@ y_2_label = customtkinter.CTkLabel(app, text="Enter your second y value here:", 
 y_2_label.configure(text_color='#660cc0')
 y_2_label.place(x=30, y=350)
 
-# Create the end x value entry
+# Create the end y value entry
 
 y_2 = customtkinter.CTkEntry(app, placeholder_text="Enter your second y value here")
 y_2.configure(width=100, height=100)
