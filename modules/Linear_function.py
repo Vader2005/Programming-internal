@@ -13,7 +13,9 @@ def draw():
     
     # Validate the user input for y-values (closing prices)
     if not y_1_new.replace(".", "").isdigit() or not y_2_new.replace(".", "").isdigit():
-        print("Invalid input for y-values. Please enter valid numbers.")
+        #print("Invalid input for y-values. Please enter valid numbers.")
+        import Invalid_format
+        Invalid_format.error()
         return
     
     # Printing the values
