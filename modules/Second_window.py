@@ -16,12 +16,6 @@ def Draw_equations():
     
     if Equation_chosen == 'Linear':
         import Linear_function
-        
-    if Equation_chosen == 'exponential':
-        print("Exponential chosen")
-        
-    if Equation_chosen == 'logarithmic':
-        print("Logarithmic chosen")
 
 # Create the color Variables
 
@@ -69,7 +63,7 @@ Line_customization.place(x=460, y=500)
 # Combobox
 
 combo = customtkinter.StringVar()
-Equations = ['Linear', 'exponential', 'logarithmic']
+Equations = ['Linear']
 Equations_combo = customtkinter.CTkComboBox(app, variable=combo, state='readonly', values=Equations)
 Equations_combo.place(x=600, y=435)
 
