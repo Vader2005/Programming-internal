@@ -28,6 +28,17 @@ def draw():
     y_1_value = float(y_1_new)
     y_2_value = float(y_2_new)
     
+    # Make sure the y-values are not too high
+    
+    if y_1_value > 500:
+        import Boundary
+        Boundary.error()
+        return
+    elif y_2_value > 500:
+        import Boundary
+        Boundary.error()
+        return
+    
     # Get corresponding values from Machine Learning
     
     x_1_value = Machine_learning.get_x_value(y_1_value)
