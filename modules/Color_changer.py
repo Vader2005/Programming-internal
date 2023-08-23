@@ -47,13 +47,13 @@ Heading.place(x=115, y=25)
 
 # Line 1 Button
 
-Line_1 = customtkinter.CTkButton(app, text="Line 1", command=change_color_Line1, width=156, height=69, fg_color='#7d00f9', font=('Roboto', 23))
+Line_1 = customtkinter.CTkButton(app, text="Validation line", command=change_color_Line1, width=156, height=69, fg_color='#7d00f9', font=('Roboto', 23))
 Line_1.configure(text_color='#e8d2ff')
 Line_1.place(x=387, y=185)
 
 # Line 2
 
-Line_2 = customtkinter.CTkButton(app, text="Line 2", command=change_color_Line2, width=156, height=69, fg_color='#9200d6', font=('Roboto', 23))
+Line_2 = customtkinter.CTkButton(app, text="Prediction line", command=change_color_Line2, width=156, height=69, fg_color='#9200d6', font=('Roboto', 23))
 Line_2.configure(text_color='#e8d2ff')
 Line_2.place(x=387, y=410)
 
