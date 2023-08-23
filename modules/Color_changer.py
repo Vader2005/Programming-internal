@@ -32,10 +32,11 @@ def change_color_Line2():
 # Recolor the graph:
 
 def Recolor():
-    global colors, color2, background_color
+    global colors, color2, background_color, outside_color
     colors = askcolor(title="Validation line color")
     color2 = askcolor(title="Prediction line color")
     background_color = askcolor(title="Background color")
+    outside_color = askcolor(title="Color outside graph")
     import Recolor_graph
     Recolor_graph.new_graph()
 
