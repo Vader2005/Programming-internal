@@ -32,9 +32,10 @@ def change_color_Line2():
 # Recolor the graph:
 
 def Recolor():
-    global colors, color2
-    colors = askcolor(title="Tkinter Color Chooser")
-    color2 = askcolor(title="Tkinter Color Chooser")
+    global colors, color2, background_color
+    colors = askcolor(title="Validation line color")
+    color2 = askcolor(title="Prediction line color")
+    background_color = askcolor(title="Background color")
     import Recolor_graph
     Recolor_graph.new_graph()
 

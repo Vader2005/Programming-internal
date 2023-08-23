@@ -4,10 +4,12 @@ import matplotlib.pyplot as plt
 
 def new_graph():
     
-    from Color_changer import colors, color2
+    from Color_changer import colors, color2, background_color
     
     #print(colors[1])
     #print(color2[1])
+    
+    plt.rcParams['axes.facecolor'] = background_color[1]
     
     plt.figure(figsize=(5, 4))
     plt.title("Machine learning")
