@@ -19,5 +19,8 @@ pip install scikit-learn
 
 pip install keras
 
-pip install yfinance
+pip install finance
+
+Run the intro_design.py file when running
+
 
