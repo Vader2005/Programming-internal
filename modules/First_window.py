@@ -4,6 +4,7 @@ import sys
 from playsound import playsound
 from PIL import ImageTk, Image
 import os
+from pathlib import Path
 
 def Window():
     # Quit button function
@@ -14,7 +15,9 @@ def Window():
     # Create the shawn function
     
     def Shawn():
-        playsound(r"C:\Users\Survi\Documents\Programming internal\modules\audio.mp3")
+        #playsound(r"C:\Users\Survi\Documents\Programming internal\modules\audio.mp3")
+        Path_audio = str(Path(os.getcwd()) / 'modules' / 'audio.mp3')
+        playsound(Path_audio)
         
         win = Toplevel()
         
@@ -24,7 +27,9 @@ def Window():
         frame.pack()
         frame.place(anchor='center', relx=0.5, rely=0.5)
         
-        image1=Image.open(os.path.join(r"C:\Users\Survi\Documents\Programming internal\modules\Shawn.jpg"))
+        image_file = str(Path(os.getcwd()) / 'modules' / 'Shawn.jpg')
+        image1 = Image.open(image_file)
+        #image1=Image.open(os.path.join(r"C:\Users\Survi\Documents\Programming internal\modules\Shawn.jpg"))
         resize_image = image1.resize((900, 800), Image.ANTIALIAS)
         img = ImageTk.PhotoImage(resize_image)
         
