@@ -19,7 +19,9 @@ pip install scikit-learn
 
 pip install keras
 
-pip install yfinance
+pip install finance
+
+pip install pandas_datareader
 
 Run the intro_design.py file when running. 
 
