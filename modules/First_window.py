@@ -15,7 +15,6 @@ def Window():
     # Create the shawn function
     
     def Shawn():
-        #playsound(r"C:\Users\Survi\Documents\Programming internal\modules\audio.mp3")
         Path_audio = str(Path(os.getcwd()) / 'modules' / 'audio.mp3')
         playsound(Path_audio)
         
@@ -29,7 +28,6 @@ def Window():
         
         image_file = str(Path(os.getcwd()) / 'modules' / 'Shawn.jpg')
         image1 = Image.open(image_file)
-        #image1=Image.open(os.path.join(r"C:\Users\Survi\Documents\Programming internal\modules\Shawn.jpg"))
         resize_image = image1.resize((900, 800), Image.ANTIALIAS)
         img = ImageTk.PhotoImage(resize_image)
         
@@ -84,8 +82,8 @@ def Window():
     
     # Create the Shawn Button
     
-    Shawn =  Continue = customtkinter.CTkButton(app, text="Shawn", command=Shawn, width=142, height=75, fg_color="#a98bff", font=('Roboto', 27))
-    Shawn.configure(text_color='#000000')
+    Shawn =  Continue = customtkinter.CTkButton(app, text="Shawn", command=Shawn, width=142, height=75, fg_color="#610094", font=('Roboto', 27))
+    Shawn.configure(text_color='#610094')
     Shawn.place(x=400, y=400)
 
     # Run the application window
