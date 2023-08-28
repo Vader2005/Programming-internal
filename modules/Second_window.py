@@ -33,9 +33,10 @@ app.configure(fg_color='#663399')
 
 Heading = customtkinter.CTkLabel(app, text="Stock Prediction", fg_color='#be9edf', width=719, height=48, font=('Roboto', 36))
 Heading.configure(text_color='#660cc0')
-Heading.place(x=105, y=25)
+Heading.place(relx=0.494, rely=0.0778, anchor=customtkinter.CENTER)
 
 # Embed the graph
+
 
 fig = Figure(figsize= (5, 5), dpi=100)
 plot1 = fig.add_subplot(111)
@@ -58,26 +59,26 @@ toolbar.place(x=50, y=653)
 
 Line_customization = customtkinter.CTkButton(app, command=color_changer, text="Line Customization", width=142, height=75, fg_color='#bec3fa', font=('Roboto', 16))
 Line_customization.configure(text_color='#22277a')
-Line_customization.place(x=460, y=500)
+Line_customization.place(relx=0.5702, rely=0.9140, anchor=customtkinter.CENTER)
 
 # Combobox
 
 combo = customtkinter.StringVar()
 Equations = ['Linear']
 Equations_combo = customtkinter.CTkComboBox(app, variable=combo, state='readonly', values=Equations)
-Equations_combo.place(x=600, y=435)
+Equations_combo.place(relx=0.638, rely=0.74)
 
 # Button for combobox
 
 Equation_button = customtkinter.CTkButton(app, command=Draw_equations, text="Draw Trendline", width=142, height=75, fg_color='#bec3fa', font=('Roboto', 16))
 Equation_button.configure(text_color='#22277a')
-Equation_button.place(x=460, y=300)
+Equation_button.place(relx=0.488, rely=0.51)
 
 # Draw trendline option
 
 Trendline_label = customtkinter.CTkLabel(app, text="Draw a trendline: ", fg_color='#be9edf', width=50, height=50, font=('Roboto', 16))
 Trendline_label.configure(text_color='#660cc0')
-Trendline_label.place(x=460, y=425)
+Trendline_label.place(relx=0.49, rely=0.721)
 
 # Run the window
 

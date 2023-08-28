@@ -1,7 +1,6 @@
 from tkinter import *
 import customtkinter
 import sys
-from playsound import playsound
 from PIL import ImageTk, Image
 import os
 from pathlib import Path
@@ -15,8 +14,6 @@ def Window():
     # Create the shawn function
     
     def Shawn():
-        Path_audio = str(Path(os.getcwd()) / 'modules' / 'audio.mp3')
-        playsound(Path_audio)
         
         win = Toplevel()
         
@@ -28,7 +25,7 @@ def Window():
         
         image_file = str(Path(os.getcwd()) / 'modules' / 'Shawn.jpg')
         image1 = Image.open(image_file)
-        resize_image = image1.resize((900, 800), Image.ANTIALIAS)
+        resize_image = image1.resize((900, 800), Image.LANCZOS)
         img = ImageTk.PhotoImage(resize_image)
         
         
