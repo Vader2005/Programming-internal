@@ -19,8 +19,14 @@ pip install scikit-learn
 
 pip install keras
 
-pip install yfinance
+pip install finance
+
+pip install pandas_datareader
+
+pip install tensorflow
 
 Run the intro_design.py file when running. 
+
+Put it in a file NOT CALLED modules
 
 
