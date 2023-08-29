@@ -57,28 +57,28 @@ toolbar.place(x=50, y=653)
 
 # Line customization button
 
-Line_customization = customtkinter.CTkButton(app, command=color_changer, text="Line Customization", width=142, height=75, fg_color='#bec3fa', font=('Roboto', 16))
-Line_customization.configure(text_color='#22277a')
-Line_customization.place(relx=0.5702, rely=0.9140, anchor=customtkinter.CENTER)
+Line_customization1 = customtkinter.CTkButton(app, command=color_changer, text="Line Customization", width=142, height=75, fg_color='#bec3fa', font=('Roboto', 16))
+Line_customization1.configure(text_color='#22277a')
+Line_customization1.place(relx=0.57, rely=0.91, anchor=customtkinter.CENTER)
 
 # Combobox
 
 combo = customtkinter.StringVar()
 Equations = ['Linear']
 Equations_combo = customtkinter.CTkComboBox(app, variable=combo, state='readonly', values=Equations)
-Equations_combo.place(relx=0.638, rely=0.74)
+Equations_combo.place(relx=0.72, rely=0.73, anchor=customtkinter.CENTER)
 
 # Button for combobox
 
 Equation_button = customtkinter.CTkButton(app, command=Draw_equations, text="Draw Trendline", width=142, height=75, fg_color='#bec3fa', font=('Roboto', 16))
 Equation_button.configure(text_color='#22277a')
-Equation_button.place(relx=0.488, rely=0.51)
+Equation_button.place(relx=0.57, rely=0.54, anchor=customtkinter.CENTER)
 
 # Draw trendline option
 
 Trendline_label = customtkinter.CTkLabel(app, text="Draw a trendline: ", fg_color='#be9edf', width=50, height=50, font=('Roboto', 16))
 Trendline_label.configure(text_color='#660cc0')
-Trendline_label.place(relx=0.49, rely=0.721)
+Trendline_label.place(relx=0.57, rely=0.721, anchor=customtkinter.CENTER)
 
 # Run the window
 
