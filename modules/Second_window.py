@@ -47,13 +47,15 @@ plot1.legend(['Train', 'Validations', 'Predictions'], loc='lower right')
 
 canvas = FigureCanvasTkAgg(fig, master=app)
 canvas.draw()
-canvas.get_tk_widget().place(x=50, y=150)
+canvas.get_tk_widget().place(relx=0.26, rely=0.547, anchor=customtkinter.CENTER)
+
+
 
 # Add a tool bar
 
 toolbar = NavigationToolbar2Tk(canvas, app)
 toolbar.update()
-toolbar.place(x=50, y=653)
+toolbar.place(relx=0.15, rely=0.914, anchor=customtkinter.CENTER)
 
 # Line customization button
 
