@@ -29,4 +29,5 @@ Run the intro_design.py file when running.
 
 Put it in a file NOT CALLED modules
 
+If the second_window placement is bad, try enlarging the screen, this issue will be mentioned in the slides.
 
