@@ -20,8 +20,8 @@ def draw():
     
     # Printing the values
     
-    print("y_1_new:", y_1_new)
-    print("y_2_new:", y_2_new)
+    #print("y_1_new:", y_1_new)
+    #print("y_2_new:", y_2_new)
     
     # Convert y values to float after valdation
     
@@ -44,8 +44,8 @@ def draw():
     x_1_value = Machine_learning.get_x_value(y_1_value)
     x_2_value = Machine_learning.get_x_value(y_2_value)
     
-    print("The first x-value is:", x_1_value)
-    print("The second x-value is", x_2_value)
+    #print("The first x-value is:", x_1_value)
+    #print("The second x-value is", x_2_value)
 
     
     # Handles the error in case doesn't exist
@@ -63,8 +63,8 @@ def draw():
     
     x_values_datetime = pd.to_datetime(x_values, format='%Y-%m-%d')
     
-    print("The list of y values is: ", y_values)
-    print("The list of x values is: ", x_values)
+    #print("The list of y values is: ", y_values)
+    #print("The list of x values is: ", x_values)
     
     plt.figure(figsize=(5, 4))
     plt.title("Machine learning")
