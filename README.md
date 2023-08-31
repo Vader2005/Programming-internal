@@ -5,8 +5,6 @@ Install the following modules before use:
 
 pip install customtkinter
 
-pip install playsound
-
 pip install pillow
 
 pip install matplotlib
